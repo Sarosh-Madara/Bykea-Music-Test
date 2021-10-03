@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.home.HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/layout_search"
+        android:background="@color/whiteLite"
+        android:layout_width="match_parent"
+        android:padding="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:background="@drawable/shapesearch"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:layout_width="match_parent"
+            android:drawablePadding="@dimen/_10sdp"
+            android:id="@+id/edit_search_field"
+            android:padding="@dimen/_5sdp"
+            android:hint="eg. Akcent"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_above="@id/player_control"
+        android:layout_below="@id/layout_search"
+        android:layout_height="match_parent">
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_layout"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/rv_shimmer"
+                tools:itemCount="6"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_song_item_loading"
+                android:layout_height="match_parent"/>
+
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_empty"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/listen_song"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"/>
+
+            <TextView
+                android:text="Listen you favorite songs!!"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_no_songs"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/listen_song"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"/>
+
+            <TextView
+                android:text="Sorry! No result found"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold|italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_playlist"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            tools:itemCount="6"
+            tools:listitem="@layout/row_song_item"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/player_control"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:background="@color/whiteLite"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp">
+
+        <ImageView
+            android:id="@+id/media_actions_play"
+            android:layout_centerInParent="true"
+            android:src="@android:drawable/ic_media_play"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            app:tint="@color/black" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

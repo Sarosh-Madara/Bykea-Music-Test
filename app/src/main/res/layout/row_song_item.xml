@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_5sdp"
+    android:layout_height="@dimen/_100sdp">
+    
+    <ImageView
+        android:id="@+id/iv_album_art"
+        android:src="@drawable/shape_album_art"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"/>
+
+    <LinearLayout
+        android:layout_toLeftOf="@id/iv_is_song_playing"
+        android:layout_toRightOf="@id/iv_album_art"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_song_name"
+                tools:text="Song name"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                tools:text="Artist"
+                android:id="@+id/txt_song_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                tools:text="Album"
+                android:id="@+id/txt_song_album"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:visibility="visible"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/_15sdp"
+        android:id="@+id/iv_song_playing"
+        android:scaleType="centerInside"
+        android:src="@drawable/is_playing"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"/>
+
+</RelativeLayout>
