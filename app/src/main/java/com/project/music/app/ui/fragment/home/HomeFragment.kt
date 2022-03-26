@@ -81,6 +81,7 @@ class HomeFragment : BaseFragment() {
         })
 
         // app submitted and rejected
+        // push to github branch
         binding.mediaActionsPlay.setOnClickListener {
             if (mediaPlayer.isPlaying()) {
                 // pausing the media player if media player
