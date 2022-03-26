@@ -80,6 +80,7 @@ class HomeFragment : BaseFragment() {
             false
         })
 
+        // app submitted and rejected
         binding.mediaActionsPlay.setOnClickListener {
             if (mediaPlayer.isPlaying()) {
                 // pausing the media player if media player
